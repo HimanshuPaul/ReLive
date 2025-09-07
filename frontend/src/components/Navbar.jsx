@@ -16,12 +16,9 @@ const Navbar = () => {
 
       {/* Links */}
       <div
-        className={`max-md:absolute max-md:top-8 max-md:left-0 max-md:font-medium 
-          max-md:text-lg z-50 flex flex-col md:flex-row items-center 
-          max-md:justify-center gap-8 min-md:px-8 py-3 max-md:h-screen 
-          min-md:rounded-full backdrop-blur bg-black/80 md:bg-white/20 md:border 
-          border-gray-300/20 overflow-hidden transition-all duration-300
-          ${isOpen ? "max-md:w-full" : "max-md:w-0"}`}
+        className={`max-md:absolute max-md:top-8 max-md:left-0 max-md:font-medium max-md:text-lg z-50 flex flex-col md:flex-row items-center max-md:justify-center gap-8 min-md:px-8 py-3 max-md:h-screen min-md:rounded-full backdrop-blur bg-black/80 md:bg-white/20 md:border border-gray-300/20 overflow-hidden transition-all duration-300 ${
+          isOpen ? "max-md:w-full" : "max-md:w-0"
+        }`}
       >
         {/* Close Icon (mobile only) */}
         <XIcon

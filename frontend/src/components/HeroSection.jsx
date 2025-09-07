@@ -15,7 +15,7 @@ const Hero = () => {
 
       {/* Content */}
       <div className="relative z-10 max-w-3xl text-left px-6 md:px-12">
-        <p className="text-teal-400 font-semibold uppercase tracking-wide">
+        <p className="text-emerald-400 font-semibold uppercase tracking-wide">
           Mental Health Care
         </p>
         <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight mt-3">
@@ -36,7 +36,7 @@ const Hero = () => {
           </button>
           <button
             onClick={() => navigate("/resources")}
-            className="px-6 py-3 bg-teal-400 hover:bg-teal-500 text-black rounded-full shadow-lg transition"
+            className="px-6 py-3 bg-emerald-400 hover:bg-emerald-500 text-black rounded-full shadow-lg transition"
           >
             Explore Resources
           </button>
