@@ -1,7 +1,16 @@
 import React from "react";
+import Music from "../components/Music";
+import ResourceHero from "../components/ResourceHero";
+import Activities from "../components/Activities";
 
-const Resources = () => {
-  return <div>Resources</div>;
-};
+function App() {
+  return (
+    <>
+      <ResourceHero />
+      <Music />
+      <Activities />
+    </>
+  );
+}
 
-export default Resources;
+export default App;

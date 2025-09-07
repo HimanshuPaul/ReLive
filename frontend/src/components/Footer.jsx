@@ -9,8 +9,8 @@ export default function Footer() {
         <div className="-mt-3">
           {" "}
           {/* moves the newsletter */}
-          <div className="flex items-center mb-12">
-            <img src={assets.logo} alt="ReLive Logo" className="w-40 h-15" />
+          <div className="flex items-center mb-8">
+            <img src={assets.logo} alt="ReLive Logo" className="w-40 h-12" />
           </div>
           {/* moves the Newsletter Signup */}
           <p className="text-m mb-6">

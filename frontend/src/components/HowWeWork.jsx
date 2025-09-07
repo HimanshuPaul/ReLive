@@ -1,4 +1,3 @@
-// src/components/HowWeWork.jsx
 import React from "react";
 
 const steps = [
