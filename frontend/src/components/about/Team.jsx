@@ -6,32 +6,32 @@ export default function Team() {
     {
       name: "Sonali Mahato",
       role: "UI/UX Designer",
-      img: "https://via.placeholder.com/400x400?text=Sonali",
+      img: "https://i.postimg.cc/9Fj104pC/Sonali-pic.jpg",
     },
     {
       name: "Nikita Mishra",
       role: "Front-End Development",
-      img: "https://via.placeholder.com/400x400?text=Nikita",
+      img: "https://i.postimg.cc/NfgfQ4Wt/myphoto-resized-Picsart-Ai-Image-Enhancer.png",
     },
     {
       name: "Himanshu Paul",
       role: "Front-End Development",
-      img: "https://via.placeholder.com/400x400?text=Himanshu",
+      img: "https://i.postimg.cc/x8rG2f7z/Himanshu-pic.jpg",
     },
     {
       name: "Shilpi Thakur",
       role: "Front-End Development",
-      img: "https://via.placeholder.com/400x400?text=Sidhanta",
+      img: "https://i.postimg.cc/sD7SpCLn/Shilpi-pic.jpg",
     },
     {
       name: "Sidhanta Sahoo",
       role: "Backend Development",
-      img: "https://via.placeholder.com/400x400?text=Somen",
+      img: "https://i.postimg.cc/7hbGCp2N/Sidhanta-pic.jpg",
     },
     {
       name: "Somen Mandal",
       role: "Back-End Development",
-      img: "https://via.placeholder.com/400x400?text=Adeeb",
+      img: "https://i.postimg.cc/mD7RmVGG/Somen-pic.jpg",
     },
   ];
 
@@ -42,7 +42,7 @@ export default function Team() {
           Our Team
         </h4>
         <h2 className="text-2xl md:text-3xl text-white font-bold mb-8">
-          Meet the Experts
+          Meet the CodeTitans
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {members.map((m, i) => (
