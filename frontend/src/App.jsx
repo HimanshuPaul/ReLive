@@ -18,7 +18,7 @@ const App = () => {
       {!isAdminRoute && <Navbar />}
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About_Us />} />
+        <Route path="/about_us" element={<About_Us />} />
         <Route path="/resources" element={<Resources />} />
         <Route path="/services" element={<Services />} />
       </Routes>
