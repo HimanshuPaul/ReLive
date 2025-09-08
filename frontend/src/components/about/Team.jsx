@@ -4,27 +4,39 @@ import MemberCard from "./MemberCard";
 export default function Team() {
   const members = [
     {
-      name: "John Doe",
-      role: "Frontend Developer",
-      img: "https://via.placeholder.com/400x300?text=John",
-      bio: "Builds pixel-perfect UI and maintains the component library.",
+      name: "Sonali Mahato",
+      role: "UI/UX Designer",
+      img: "https://via.placeholder.com/400x400?text=Sonali",
     },
     {
-      name: "Jane Smith",
-      role: "Product Designer",
-      img: "https://via.placeholder.com/400x300?text=Jane",
-      bio: "Designs intuitive user experiences and clean interfaces.",
+      name: "Nikita Mishra",
+      role: "Front-End Development",
+      img: "https://via.placeholder.com/400x400?text=Nikita",
     },
     {
-      name: "Mike Johnson",
-      role: "Project Manager",
-      img: "https://via.placeholder.com/400x300?text=Mike",
-      bio: "Keeps the team aligned and ensures timely deliveries.",
+      name: "Himanshu Paul",
+      role: "Front-End Development",
+      img: "https://via.placeholder.com/400x400?text=Himanshu",
+    },
+    {
+      name: "Shilpi Thakur",
+      role: "Front-End Development",
+      img: "https://via.placeholder.com/400x400?text=Sidhanta",
+    },
+    {
+      name: "Sidhanta Sahoo",
+      role: "Backend Development",
+      img: "https://via.placeholder.com/400x400?text=Somen",
+    },
+    {
+      name: "Somen Mandal",
+      role: "Back-End Development",
+      img: "https://via.placeholder.com/400x400?text=Adeeb",
     },
   ];
 
   return (
-    <section className="py-12 px-6 bg-[#00172e]">
+    <section className="py-12 px-6 bg-[#023020]">
       <div className="max-w-6xl mx-auto text-center">
         <h4 className="text-[#ffd700] text-sm uppercase tracking-wide mb-2">
           Our Team

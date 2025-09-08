@@ -10,10 +10,10 @@ export default function Values() {
 
   return (
     <section className="py-12 px-6">
-      <div className="max-w-6xl mx-auto bg-[#0a1a3f] rounded-lg p-6 md:p-10 flex flex-col md:flex-row gap-8 items-center">
+      <div className="max-w-6xl mx-auto bg-[#023020] rounded-lg p-6 md:p-10 flex flex-col md:flex-row gap-8 items-center">
         <div className="flex-1">
           <img
-            src="https://wallpaperaccess.com/full/1169815.jpg"
+            src="https://i.postimg.cc/yYXKBq02/about-us-bg2.jpg"
             alt="Values"
             className="w-full rounded-lg shadow-md object-cover h-64 md:h-80"
           />

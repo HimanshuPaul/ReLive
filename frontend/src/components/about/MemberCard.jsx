@@ -1,16 +1,15 @@
 import React from "react";
 
-export default function MemberCard({ name, role, img, bio }) {
+export default function MemberCard({ name, role, img }) {
   return (
-    <div className="bg-[#002b5c] rounded-lg p-6 shadow-lg transform transition hover:-translate-y-2">
+    <div className="flex flex-col items-center">
       <img
         src={img}
         alt={name}
-        className="w-full h-44 object-cover rounded-md mb-4"
+        className="w-40 h-40 object-cover rounded-full border-4 border-purple-600 mb-4"
       />
-      <h3 className="text-[#ffd700] text-lg font-semibold">{name}</h3>
-      <p className="text-sm text-[#e6e6e6]">{role}</p>
-      <p className="mt-3 text-[#dcdcdc] text-sm leading-relaxed">{bio}</p>
+      <h3 className="text-2xl font-bold text-gray-900 text-center">{name}</h3>
+      <p className="text-lg text-gray-600 text-center">{role}</p>
     </div>
   );
 }
