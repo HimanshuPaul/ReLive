@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Calendar } from "lucide-react";
+import { Mail, Phone, MapPin, Calendar, Clock } from "lucide-react";
 import { useState } from "react";
 
 export default function Appointments() {
@@ -9,6 +9,15 @@ export default function Appointments() {
     e.preventDefault();
     alert(`Booking submitted!\nDate: ${date}\nTime: ${time}`);
   };
+
+  const timeSlots = [
+    "9:00 AM",
+    "10:00 AM",
+    "11:00 AM",
+    "2:00 PM",
+    "3:00 PM",
+    "4:00 PM",
+  ];
 
   return (
     <section className="py-16 sm:py-24 bg-gray-50 text-gray-800">
@@ -21,7 +30,10 @@ export default function Appointments() {
           <h2 className="mt-2 text-3xl font-bold text-gray-900">
             We'd love to hear from you
           </h2>
-          <p className="mt-4 text-gray-600">Feel Free to reach us.</p>
+          <p className="mt-4 text-gray-600">
+            Tempor posuere urna eu integer aenean metus aliquet luctus taciti.
+            Integer nascetur tristique ultricies dictum dictumst id.
+          </p>
 
           <div className="mt-8 space-y-6">
             <div className="flex items-start space-x-4">
@@ -30,7 +42,9 @@ export default function Appointments() {
               </div>
               <div>
                 <h3 className="font-semibold text-lg">Head Office</h3>
-                <p className="text-gray-600">XYZ</p>
+                <p className="text-gray-600">
+                  Tower 789 Oak St, Smalltown, TX 23456, United States
+                </p>
               </div>
             </div>
 
@@ -40,8 +54,8 @@ export default function Appointments() {
               </div>
               <div>
                 <h3 className="font-semibold text-lg">Email Us</h3>
-                <p className="text-gray-600">support@example.com</p>
-                <p className="text-gray-600">hello@example.com</p>
+                <p className="text-gray-600">support@yourdomain.tld</p>
+                <p className="text-gray-600">hello@yourdomain.tld</p>
               </div>
             </div>
 
@@ -103,34 +117,24 @@ export default function Appointments() {
               />
             </div>
 
-            {/* Time Slots */}
+            {/* Time Slots Dropdown */}
             <div>
-              <label className="block text-sm font-semibold mb-2">
-                Preferred Time
+              <label className="block text-sm font-semibold mb-2 flex items-center space-x-2">
+                <Clock size={18} /> <span>Preferred Time</span>
               </label>
-              <div className="grid grid-cols-3 gap-2">
-                {[
-                  "9:00 AM",
-                  "10:00 AM",
-                  "11:00 AM",
-                  "2:00 PM",
-                  "3:00 PM",
-                  "4:00 PM",
-                ].map((slot) => (
-                  <button
-                    type="button"
-                    key={slot}
-                    onClick={() => setTime(slot)}
-                    className={`p-2 rounded-lg border text-sm ${
-                      time === slot
-                        ? "bg-blue-900 text-white"
-                        : "bg-white text-gray-900"
-                    }`}
-                  >
+              <select
+                value={time}
+                onChange={(e) => setTime(e.target.value)}
+                className="p-3 rounded-lg text-gray-900 w-full"
+                required
+              >
+                <option value="">-- Select a time --</option>
+                {timeSlots.map((slot) => (
+                  <option key={slot} value={slot}>
                     {slot}
-                  </button>
+                  </option>
                 ))}
-              </div>
+              </select>
             </div>
 
             <textarea
