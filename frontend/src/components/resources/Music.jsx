@@ -1,4 +1,4 @@
-import { musicData } from "../assets/data";
+import { musicData } from "../../assets/resourceData";
 
 export default function Music() {
   return (

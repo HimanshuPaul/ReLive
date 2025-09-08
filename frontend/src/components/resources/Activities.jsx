@@ -1,4 +1,4 @@
-import { activitiesData } from "../assets/data";
+import { activitiesData } from "../../assets/resourceData";
 
 export default function Activities() {
   const handleStart = (activity) => {

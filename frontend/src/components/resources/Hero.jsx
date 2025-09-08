@@ -1,4 +1,4 @@
-export default function ResourceHero() {
+export default function Hero() {
   return (
     <section
       className="hero bg-cover bg-center text-white py-32 px-4"

@@ -1,12 +1,12 @@
 import React from "react";
-import Music from "../components/Music";
-import ResourceHero from "../components/ResourceHero";
-import Activities from "../components/Activities";
+import Music from "../components/resources/Music";
+import Activities from "../components/resources/Activities";
+import Hero from "../components/resources/Hero";
 
 function App() {
   return (
     <>
-      <ResourceHero />
+      <Hero />
       <Music />
       <Activities />
     </>
