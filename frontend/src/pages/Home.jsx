@@ -6,13 +6,8 @@ import HowWeWork from "../components/HowWeWork";
 const Home = () => {
   return (
     <>
-      {/* Hero Section */}
       <HeroSection />
-
-      {/* How We Work Section */}
       <HowWeWork />
-
-      {/* Stats Section */}
       <StatCounter />
     </>
   );
