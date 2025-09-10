@@ -31,8 +31,9 @@ export default function Appointments() {
             We'd love to hear from you
           </h2>
           <p className="mt-4 text-gray-600">
-            Tempor posuere urna eu integer aenean metus aliquet luctus taciti.
-            Integer nascetur tristique ultricies dictum dictumst id.
+            Whether you have questions, want to book an appointment, or need
+            support, our team is here to listen. Reach out via email, phone, or
+            use the form to connect directly with our certified counsellors
           </p>
 
           <div className="mt-8 space-y-6">
@@ -43,7 +44,7 @@ export default function Appointments() {
               <div>
                 <h3 className="font-semibold text-lg">Head Office</h3>
                 <p className="text-gray-600">
-                  Tower 789 Oak St, Smalltown, TX 23456, United States
+                  Arka Jain University, Ghamaria, Jharkhand, India
                 </p>
               </div>
             </div>
@@ -54,8 +55,10 @@ export default function Appointments() {
               </div>
               <div>
                 <h3 className="font-semibold text-lg">Email Us</h3>
-                <p className="text-gray-600">support@yourdomain.tld</p>
-                <p className="text-gray-600">hello@yourdomain.tld</p>
+                <p className="text-gray-600">
+                  support@arkajainunivercity.ac.in
+                </p>
+                <p className="text-gray-600">hello@arkajainunivercity.ac.in</p>
               </div>
             </div>
 
@@ -65,8 +68,8 @@ export default function Appointments() {
               </div>
               <div>
                 <h3 className="font-semibold text-lg">Call Us</h3>
-                <p className="text-gray-600">Phone: +1 (555) 987-6543</p>
-                <p className="text-gray-600">Fax: +1 (555) 987-6541</p>
+                <p className="text-gray-600">Phone: +91(555) 987-6543</p>
+                <p className="text-gray-600">Fax: +91 (555) 987-6541</p>
               </div>
             </div>
           </div>
@@ -80,13 +83,13 @@ export default function Appointments() {
               <input
                 type="text"
                 placeholder="Your name"
-                className="p-3 rounded-lg text-gray-900 w-full"
+                className="p-3 rounded-lg w-full bg-white text-black"
                 required
               />
               <input
                 type="email"
                 placeholder="Your email"
-                className="p-3 rounded-lg text-gray-900 w-full"
+                className="p-3 rounded-lg w-full bg-white text-black"
                 required
               />
             </div>
@@ -94,38 +97,38 @@ export default function Appointments() {
               <input
                 type="text"
                 placeholder="Phone number"
-                className="p-3 rounded-lg text-gray-900 w-full"
+                className="p-3 rounded-lg w-full bg-white text-black"
               />
               <input
                 type="text"
                 placeholder="Subject"
-                className="p-3 rounded-lg text-gray-900 w-full"
+                className="p-3 rounded-lg w-full bg-white text-black"
               />
             </div>
 
             {/* Date Picker */}
             <div>
-              <label className="block text-sm font-semibold mb-2 flex items-center space-x-2">
+              <label className="block text-sm font-semibold mb-2 flex items-center space-x-2 text-white">
                 <Calendar size={18} /> <span>Preferred Date</span>
               </label>
               <input
                 type="date"
                 value={date}
                 onChange={(e) => setDate(e.target.value)}
-                className="p-3 rounded-lg text-gray-900 w-full"
+                className="p-3 rounded-lg w-full bg-white text-black"
                 required
               />
             </div>
 
             {/* Time Slots Dropdown */}
             <div>
-              <label className="block text-sm font-semibold mb-2 flex items-center space-x-2">
+              <label className="block text-sm font-semibold mb-2 flex items-center space-x-2 text-white">
                 <Clock size={18} /> <span>Preferred Time</span>
               </label>
               <select
                 value={time}
                 onChange={(e) => setTime(e.target.value)}
-                className="p-3 rounded-lg text-gray-900 w-full"
+                className="p-3 rounded-lg w-full bg-white text-black"
                 required
               >
                 <option value="">-- Select a time --</option>
@@ -140,7 +143,7 @@ export default function Appointments() {
             <textarea
               placeholder="Your message"
               rows={4}
-              className="p-3 rounded-lg text-gray-900 w-full"
+              className="p-3 rounded-lg w-full bg-white text-black"
             />
 
             <button

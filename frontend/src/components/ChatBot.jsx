@@ -1,22 +1,36 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, {
+  useState,
+  useEffect,
+  useRef,
+  forwardRef,
+  useImperativeHandle,
+} from "react";
 import { MessageCircle, X } from "lucide-react";
 
-const ChatBot = () => {
-  const [isOpen, setIsOpen] = useState(false);
+const ChatBot = forwardRef(({ isOpen: externalOpen, onClose, onOpen }, ref) => {
+  // If externalOpen is provided, sync state with it
+  const [isOpen, setIsOpen] = useState(externalOpen ?? false);
+
+  useEffect(() => {
+    if (externalOpen !== undefined) {
+      setIsOpen(externalOpen);
+    }
+  }, [externalOpen]);
+
   const [messages, setMessages] = useState([
     {
       sender: "bot",
       text: "👋 Hello! I’m here to support your mental wellness. How would you like to proceed?",
     },
   ]);
-  const [mode, setMode] = useState("menu"); // menu / mental / paragraph / volunteers
+
+  const [mode, setMode] = useState("menu");
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState([]);
   const [paragraph, setParagraph] = useState("");
   const [awaitingParagraph, setAwaitingParagraph] = useState(false);
   const messagesEndRef = useRef(null);
 
-  // PHQ-9 (9) + GAD-7 (7) → total 16 questions
   const questions = [
     "Little interest or pleasure in doing things?",
     "Feeling down, depressed, or hopeless?",
@@ -44,7 +58,7 @@ const ChatBot = () => {
   ];
 
   const volunteers = [
-    { name: "Alice Johnson", contact: "alice@example.com" },
+    { name: "Tanvi", contact: "tanvi@example.com" },
     { name: "Bob Smith", contact: "bob@example.com" },
     { name: "Clara Lee", contact: "clara@example.com" },
   ];
@@ -53,14 +67,12 @@ const ChatBot = () => {
     setMessages((prev) => [...prev, { sender, text }]);
   };
 
-  // Auto-scroll when new message arrives
   useEffect(() => {
     if (messagesEndRef.current) {
       messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
     }
   }, [messages]);
 
-  // Start Mental Wellness Assessment
   const startAssessment = () => {
     setMode("mental");
     setCurrentQuestion(0);
@@ -110,14 +122,25 @@ const ChatBot = () => {
 
     const text = paragraph.toLowerCase();
     let sentiment = "Neutral";
-    if (text.includes("sad") || text.includes("depress") || text.includes("anxious")) {
+    if (
+      text.includes("sad") ||
+      text.includes("depress") ||
+      text.includes("anxious")
+    ) {
       sentiment = "Negative";
-    } else if (text.includes("happy") || text.includes("relaxed") || text.includes("better")) {
+    } else if (
+      text.includes("happy") ||
+      text.includes("relaxed") ||
+      text.includes("better")
+    ) {
       sentiment = "Positive";
     }
 
     addMessage("user", paragraph);
-    addMessage("bot", `🧠 Thanks for sharing. Your text sentiment seems: ${sentiment}.`);
+    addMessage(
+      "bot",
+      `🧠 Thanks for sharing. Your text sentiment seems: ${sentiment}.`
+    );
     setParagraph("");
     setAwaitingParagraph(false);
     setMode("menu");
@@ -137,27 +160,42 @@ const ChatBot = () => {
     setAwaitingParagraph(false);
   };
 
+  const closeChat = () => {
+    setIsOpen(false);
+    onClose && onClose();
+  };
+
+  const openChat = () => {
+    setIsOpen(true);
+    onOpen && onOpen();
+  };
+
+  // 🔑 Expose methods via ref
+  useImperativeHandle(ref, () => ({
+    openChat,
+    closeChat,
+    endChat,
+  }));
+
   return (
     <div>
       {/* Floating Button */}
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-6 right-6 bg-teal-600 hover:bg-cyan-700 text-white p-4 rounded-full shadow-lg transition z-50"
-      >
-        {isOpen ? <X size={24} /> : <MessageCircle size={24} />}
-      </button>
+      {externalOpen === undefined && (
+        <button
+          onClick={() => (isOpen ? closeChat() : openChat())}
+          className="fixed bottom-6 right-6 bg-teal-600 hover:bg-cyan-700 text-white p-4 rounded-full shadow-lg transition z-50"
+        >
+          {isOpen ? <X size={24} /> : <MessageCircle size={24} />}
+        </button>
+      )}
 
       {/* Chat Box */}
       {isOpen && (
-        <div className="fixed bottom-20 right-6 w-80 h-[28rem] bg-white rounded-2xl shadow-2xl flex flex-col overflow-hidden z-50">
+        <div className="fixed bottom-20 right-6 w-80 h-[28rem] bg-white rounded-2xl shadow-2xl flex flex-col overflow-hidden z-50 animate-fadeIn">
           {/* Header */}
           <div className="bg-emerald-400 text-white px-4 py-2 flex justify-between items-center">
             <h2 className="font-semibold">Wellness Chatbot</h2>
-            <X
-              size={20}
-              className="cursor-pointer"
-              onClick={() => setIsOpen(false)}
-            />
+            <X size={20} className="cursor-pointer" onClick={closeChat} />
           </div>
 
           {/* Messages */}
@@ -177,7 +215,7 @@ const ChatBot = () => {
             <div ref={messagesEndRef} />
           </div>
 
-          {/* Menu Options */}
+          {/* Bottom Section (Menu / Answers / Paragraph) */}
           {mode === "menu" && (
             <div className="p-3 border-t grid grid-cols-1 gap-2">
               <button
@@ -210,7 +248,6 @@ const ChatBot = () => {
             </div>
           )}
 
-          {/* Answer Options */}
           {mode === "mental" && !awaitingParagraph && (
             <div className="p-3 border-t grid grid-cols-1 gap-2">
               {options.map((opt, idx) => (
@@ -231,7 +268,6 @@ const ChatBot = () => {
             </div>
           )}
 
-          {/* Paragraph Input */}
           {mode === "paragraph" && awaitingParagraph && (
             <div className="p-3 border-t flex items-center gap-2">
               <input
@@ -259,6 +295,6 @@ const ChatBot = () => {
       )}
     </div>
   );
-};
+});
 
 export default ChatBot;

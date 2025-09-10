@@ -1,36 +1,37 @@
-import { useState } from "react";
+import React from "react";
 import Hero from "../components/services/Hero";
 import ServicesSection from "../components/services/ServicesSection";
 import Counsellors from "../components/services/Counsellors";
 import Appointment from "../components/services/Appointment";
+import { SignedIn, SignedOut, SignInButton } from "@clerk/clerk-react";
+import StatCounter from "../components/home/StatCounter";
 
-export default function Services() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedService, setSelectedService] = useState(null);
-
-  const openModal = (service) => {
-    setSelectedService(service);
-    setIsModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-    setTimeout(() => setSelectedService(null), 300);
-  };
-
+const Services = () => {
   return (
-    <div className="flex flex-col min-h-screen bg-black/30 text-white font-sans">
-      <main className="flex-grow">
-        <Hero onBookAppointment={() => openModal()} />
-        <ServicesSection onBookAppointment={openModal} />
-        <Counsellors />
-      </main>
+    <>
+      <Hero />
+      <ServicesSection />
 
-      <Appointment
-        isOpen={isModalOpen}
-        onClose={closeModal}
-        service={selectedService}
-      />
-    </div>
+      {/* Appointment only after login */}
+      <SignedIn>
+        <Appointment />
+      </SignedIn>
+
+      <SignedOut>
+        <div className="text-center py-10">
+          <p className="text-lg mb-4">Please sign in to book an appointment!</p>
+          <SignInButton mode="modal">
+            <button className="bg-blue-600 px-6 py-2 rounded-lg hover:bg-blue-700 transition">
+              Sign In
+            </button>
+          </SignInButton>
+        </div>
+      </SignedOut>
+
+      <Counsellors />
+      <StatCounter />
+    </>
   );
-}
+};
+
+export default Services;

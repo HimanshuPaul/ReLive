@@ -11,9 +11,8 @@ export default function AboutSection() {
           Who We Are
         </h2>
         <p className="mt-4 text-[#dcdcdc] leading-relaxed">
-          We are committed to providing the best resources and guidance to help
-          you grow and achieve your goals. Our team works together to deliver
-          beautiful, reliable, and accessible products.
+          We are a student-focused platform dedicated to providing confidential,
+          stigma-free mental health support and resources for better wellbeing.
         </p>
         <button className="mt-6 inline-block bg-[#ffd700] text-[#002147] px-6 py-2 rounded-full font-semibold hover:bg-[#ffcc00] transition">
           Learn More
