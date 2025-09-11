@@ -10,9 +10,7 @@ const Services = () => {
   return (
     <>
       <Hero />
-      <ServicesSection />
 
-      {/* Appointment only after login */}
       <SignedIn>
         <Appointment />
       </SignedIn>
@@ -27,7 +25,7 @@ const Services = () => {
           </SignInButton>
         </div>
       </SignedOut>
-
+      <ServicesSection />
       <Counsellors />
       <StatCounter />
     </>

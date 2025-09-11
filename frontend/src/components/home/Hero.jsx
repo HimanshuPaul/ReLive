@@ -22,11 +22,11 @@ const Hero = ({ onOpenChat }) => {
 
   return (
     <section
-      className="relative w-full h-[90vh] flex items-center justify-center bg-cover bg-center"
+      className="flex flex-col items-center justify-center py-30 text-center bg-cover bg-center relative"
       style={{ backgroundImage: "url('/background.jpg')" }}
     >
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black/50"></div>
+      <div className="absolute inset-0 bg-black/40"></div>
 
       {/* Content */}
       <div className="relative z-10 max-w-3xl text-left px-6 md:px-12">
@@ -45,14 +45,14 @@ const Hero = ({ onOpenChat }) => {
         <div className="mt-8 flex gap-4">
           <button
             onClick={handleTakeTest}
-            className="px-6 py-3 bg-blue-700 hover:bg-blue-800 text-white rounded-full shadow-lg transition"
+            className="px-6 py-3 bg-white/20 backdrop-blur-md hover:bg-emerald-400 text-white rounded-full shadow-lg transition"
           >
             Take Screening Test
           </button>
 
           <button
             onClick={() => navigate("/resources")}
-            className="px-6 py-3 bg-emerald-400 hover:bg-emerald-500 text-black rounded-full shadow-lg transition hover:shadow-[0_0_15px_rgba(16,185,129,0.7)]"
+            className="px-6 py-3 bg-white/20 backdrop-blur-md hover:bg-emerald-400 text-white rounded-full shadow-lg transition hover:shadow-[0_0_15px_rgba(16,185,129,0.7)]"
           >
             Explore Resources
           </button>

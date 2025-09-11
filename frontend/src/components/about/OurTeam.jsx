@@ -26,7 +26,7 @@ export default function Team() {
     {
       name: "Sidhanta Sahoo",
       role: "Backend + ChatBot Developer",
-      img: "https://i.postimg.cc/7hbGCp2N/Sidhanta-pic.jpg",
+      img: "https://i.postimg.cc/GhhSStTk/Sidhant.jpg",
     },
     {
       name: "Somen Mandal",

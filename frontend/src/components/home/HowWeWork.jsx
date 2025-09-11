@@ -1,5 +1,5 @@
 import React from "react";
-import bgImage from "../../assets/HowWeWork-bg.jpg"; // import from assets
+import bgImage from "../../assets/HowWeWork-bg.jpg";
 
 const steps = [
   {
@@ -34,7 +34,7 @@ function HowWeWork() {
       <div className="absolute inset-0 bg-black/40"></div>
 
       <div className="relative flex flex-col items-center">
-        <span className="text-teal-500 mb-2 font-semibold tracking-wider flex items-center justify-center space-x-1">
+        <span className="text-emerald-400 mb-2 font-semibold tracking-wider flex items-center justify-center space-x-1">
           <svg
             width="18"
             height="18"

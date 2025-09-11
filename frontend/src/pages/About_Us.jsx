@@ -4,20 +4,16 @@ import AboutSection from "../components/about/AboutSection";
 import WhatWeStandFor from "../components/about/WhatWeStandFor";
 import OurTeam from "../components/about/OurTeam";
 import StatCounter from "../components/home/StatCounter";
+import Counsellors from "../components/services/Counsellors";
 
 export default function About() {
   return (
-    <main
-      className="min-h-screen text-white bg-cover bg-center"
-      style={{
-        backgroundImage:
-          "url('https://i.postimg.cc/L4C3nh2p/about-values-bg2.jpg')",
-      }}
-    >
+    <main>
       <Hero />
       <AboutSection />
       <WhatWeStandFor />
       <StatCounter />
+      <Counsellors />
       <OurTeam />
     </main>
   );

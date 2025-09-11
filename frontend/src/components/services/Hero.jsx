@@ -4,7 +4,7 @@ import bgImage from "../../assets/services_hero-bg.jpg";
 export default function Hero() {
   return (
     <section
-      className="flex flex-col items-center justify-center py-40 text-center bg-cover bg-center relative"
+      className="flex flex-col items-center justify-center py-50 text-center bg-cover bg-center relative"
       style={{ backgroundImage: `url(${bgImage})` }}
     >
       {/* Overlay to make text readable */}

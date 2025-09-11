@@ -183,7 +183,7 @@ const ChatBot = forwardRef(({ isOpen: externalOpen, onClose, onOpen }, ref) => {
       {externalOpen === undefined && (
         <button
           onClick={() => (isOpen ? closeChat() : openChat())}
-          className="fixed bottom-6 right-6 bg-teal-600 hover:bg-cyan-700 text-white p-4 rounded-full shadow-lg transition z-50"
+          className="fixed bottom-6 right-6 bg-white/20 backdrop-blur-md hover:bg-emerald-400 text-white p-4 rounded-full shadow-lg transition z-50"
         >
           {isOpen ? <X size={24} /> : <MessageCircle size={24} />}
         </button>

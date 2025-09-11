@@ -1,4 +1,5 @@
 import React from "react";
+import bgImage from "../../assets/values-bg.jpg";
 
 export default function WhatWeStandFor() {
   const bullets = [
@@ -10,8 +11,12 @@ export default function WhatWeStandFor() {
   ];
 
   return (
-    <section className="py-12 px-6">
-      <div className="max-w-6xl mx-auto bg-[#023020] rounded-lg p-6 md:p-10 flex flex-col md:flex-row gap-8 items-center">
+    <section
+      className="py-12 px-6 bg-cover bg-center"
+      style={{ backgroundImage: `url(${bgImage})` }}
+    >
+      <div className="max-w-6xl mx-auto bg-white/10 backdrop-blur-md rounded-lg p-6 md:p-10 flex flex-col md:flex-row gap-8 items-center shadow-xl ">
+        {/* Left Image */}
         <div className="flex-1">
           <img
             src="https://i.postimg.cc/yYXKBq02/about-us-bg2.jpg"
@@ -19,6 +24,8 @@ export default function WhatWeStandFor() {
             className="w-full rounded-lg shadow-md object-cover h-64 md:h-80"
           />
         </div>
+
+        {/* Right Content */}
         <div className="flex-1">
           <h4 className="text-[#ffd700] text-sm uppercase tracking-wide mb-2">
             Our Values
