@@ -10,7 +10,7 @@ export default function Team() {
     },
     {
       name: "Nikita Mishra",
-      role: "AI/Data Analyst + Frontend Animator",
+      role: "Frontend Developer + Animator",
       img: "https://i.postimg.cc/NfgfQ4Wt/myphoto-resized-Picsart-Ai-Image-Enhancer.png",
     },
     {

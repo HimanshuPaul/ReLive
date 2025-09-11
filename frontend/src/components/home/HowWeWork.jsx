@@ -68,8 +68,8 @@ function HowWeWork() {
             key={step.number}
             className="bg-white/20 backdrop-blur-md rounded-3xl flex flex-col items-start p-8 w-full max-w-xs transition duration-300 hover:shadow-2xl"
           >
-            <div className="flex items-center justify-center w-12 h-12 rounded-full border-4 border-teal-600 mb-6 bg-white/30 backdrop-blur-sm">
-              <span className="text-teal-600 text-2xl font-extrabold font-mono">
+            <div className="flex items-center justify-center w-12 h-12 rounded-full border-4 border-teal-400 mb-6 bg-white">
+              <span className="text-teal-500 text-2xl font-extrabold font-mono">
                 {step.number}
               </span>
             </div>
@@ -84,12 +84,12 @@ function HowWeWork() {
         {steps.map((step, idx) => (
           <React.Fragment key={step.number}>
             <div className="flex items-center">
-              <span className="w-8 h-8 rounded-full border-2 border-teal-600 flex items-center justify-center text-teal-700 text-lg font-bold font-mono bg-white/20 backdrop-blur-sm">
+              <span className="w-8 h-8 rounded-full border-2 border-teal-400 flex items-center justify-center text-teal-500 text-lg font-bold font-mono bg-white">
                 {step.number}
               </span>
             </div>
             {idx < steps.length - 1 && (
-              <span className="w-32 h-0 border-t-2 border-gray-300 mx-2"></span>
+              <span className="w-32 h-0 border-t-2 border-white-300 mx-2"></span>
             )}
           </React.Fragment>
         ))}

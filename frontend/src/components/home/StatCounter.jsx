@@ -30,7 +30,7 @@ function CounterBox({ value, duration, suffix, label, icon, trigger }) {
   return (
     <div className="flex flex-col items-center md:items-start text-left">
       <div className="text-blue-600 mb-1">{icon}</div>
-      <span className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-blue-700 tabular-nums mb-1">
+      <span className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-600 tabular-nums mb-1">
         {count}
         {suffix}
       </span>

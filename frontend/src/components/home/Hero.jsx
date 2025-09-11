@@ -9,7 +9,12 @@ const Hero = ({ onOpenChat }) => {
 
   const handleTakeTest = () => {
     if (!isSignedIn) {
-      toast.error("⚠️ Please sign in to take the screening test!");
+      toast.error("⚠️ Please sign in to take the screening test!", {
+        position: "top-right", // Move toast to right side
+        style: {
+          marginTop: "60px", // Add space from the top
+        },
+      });
       return;
     }
     onOpenChat(); // Open the chatbot if signed in

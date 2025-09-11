@@ -1,13 +1,37 @@
 import { Mail, Phone, MapPin, Calendar, Clock } from "lucide-react";
 import { useState } from "react";
+import { toast } from "react-hot-toast";
 
-export default function Appointments() {
+export default function Appointment() {
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert(`Booking submitted!\nDate: ${date}\nTime: ${time}`);
+
+    const appointment = {
+      name: e.target[0].value,
+      email: e.target[1].value,
+      phone: e.target[2].value,
+      subject: e.target[3].value,
+      date,
+      time,
+      message: e.target[6].value,
+    };
+
+    // Save to localStorage
+    const existing = JSON.parse(localStorage.getItem("appointments")) || [];
+    existing.push(appointment);
+    localStorage.setItem("appointments", JSON.stringify(existing));
+
+    toast.success("✅ Your appointment is scheduled!", {
+      position: "top-right",
+      style: { marginTop: "60px" },
+    });
+
+    setDate("");
+    setTime("");
+    e.target.reset();
   };
 
   const timeSlots = [
@@ -38,7 +62,7 @@ export default function Appointments() {
 
           <div className="mt-8 space-y-6">
             <div className="flex items-start space-x-4">
-              <div className="flex-shrink-0 bg-blue-600 text-white p-3 rounded-full">
+              <div className="flex-shrink-0 bg-gradient-to-r from-blue-500 to-purple-600 text-white p-3 rounded-full">
                 <MapPin size={20} />
               </div>
               <div>
@@ -50,7 +74,7 @@ export default function Appointments() {
             </div>
 
             <div className="flex items-start space-x-4">
-              <div className="flex-shrink-0 bg-blue-600 text-white p-3 rounded-full">
+              <div className="flex-shrink-0 bg-gradient-to-r from-blue-500 to-purple-600 text-white p-3 rounded-full">
                 <Mail size={20} />
               </div>
               <div>
@@ -63,7 +87,7 @@ export default function Appointments() {
             </div>
 
             <div className="flex items-start space-x-4">
-              <div className="flex-shrink-0 bg-blue-600 text-white p-3 rounded-full">
+              <div className="flex-shrink-0 bg-gradient-to-r from-blue-500 to-purple-600 text-white p-3 rounded-full">
                 <Phone size={20} />
               </div>
               <div>
@@ -76,7 +100,7 @@ export default function Appointments() {
         </div>
 
         {/* Right Side - Form */}
-        <div className="bg-gradient-to-b from-blue-400 to-blue-600 rounded-2xl p-8 text-white shadow-lg">
+        <div className="bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl p-8 text-white shadow-lg">
           <h3 className="text-2xl font-bold mb-6">Book an Appointment</h3>
           <form className="space-y-4" onSubmit={handleSubmit}>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -151,7 +175,7 @@ export default function Appointments() {
               className="mt-4 bg-blue-900 hover:bg-blue-800 text-white px-6 py-3 rounded-full flex items-center space-x-2"
             >
               <Mail size={18} />
-              <span>Send Message</span>
+              <span>Submit</span>
             </button>
           </form>
         </div>
