@@ -8,7 +8,7 @@ export default function Hero() {
       style={{ backgroundImage: `url(${bgImage})` }}
     >
       {/* Overlay to make text readable */}
-      <div className="absolute inset-0 bg-black/50"></div>
+      <div className="absolute inset-0 bg-black/20"></div>
 
       {/* Content */}
       <div className="relative z-10 max-w-2xl px-6">

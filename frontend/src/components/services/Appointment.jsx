@@ -111,13 +111,13 @@ export default function Appointment() {
               <input
                 type="text"
                 placeholder="Your name"
-                className="p-3 rounded-xl w-full bg-white/50 backdrop-blur-md border border-gray-200 focus:ring-2 focus:ring-blue-400"
+                className="p-3 rounded-xl w-full bg-white/20 backdrop-blur-md focus:ring-2 focus:ring-blue-400"
                 required
               />
               <input
                 type="email"
                 placeholder="Your email"
-                className="p-3 rounded-xl w-full bg-white/30 backdrop-blur-md border border-gray-200 focus:ring-2 focus:ring-blue-400"
+                className="p-3 rounded-xl w-full bg-white/20 backdrop-blur-md focus:ring-2 focus:ring-blue-400"
                 required
               />
             </div>
@@ -125,12 +125,12 @@ export default function Appointment() {
               <input
                 type="text"
                 placeholder="Phone number"
-                className="p-3 rounded-xl w-full bg-white/70 backdrop-blur-md border border-gray-200 focus:ring-2 focus:ring-blue-400"
+                className="p-3 rounded-xl w-full bg-white/20 backdrop-blur-md focus:ring-2 focus:ring-blue-400"
               />
               <input
                 type="text"
                 placeholder="Subject"
-                className="p-3 rounded-xl w-full bg-white/70 backdrop-blur-md border border-gray-200 focus:ring-2 focus:ring-blue-400"
+                className="p-3 rounded-xl w-full bg-white/20 backdrop-blur-md focus:ring-2 focus:ring-blue-400"
               />
             </div>
 
@@ -143,7 +143,7 @@ export default function Appointment() {
                 type="date"
                 value={date}
                 onChange={(e) => setDate(e.target.value)}
-                className="p-3 rounded-full w-full bg-white/70 backdrop-blur-md border border-gray-200 focus:ring-2 focus:ring-blue-400"
+                className="p-3 rounded-full w-full bg-white/20 backdrop-blur-md focus:ring-2 focus:ring-blue-400"
                 required
               />
             </div>
@@ -156,7 +156,7 @@ export default function Appointment() {
               <select
                 value={time}
                 onChange={(e) => setTime(e.target.value)}
-                className="p-3 rounded-full w-full bg-white/70 backdrop-blur-md border border-gray-200 focus:ring-2 focus:ring-blue-400"
+                className="p-3 rounded-full w-full bg-white/20 backdrop-blur-md focus:ring-2 focus:ring-blue-400"
                 required
               >
                 <option value="">-- Select a time --</option>
@@ -171,12 +171,12 @@ export default function Appointment() {
             <textarea
               placeholder="Your message"
               rows={4}
-              className="p-3 rounded-xl w-full bg-white/70 backdrop-blur-md border border-gray-200 focus:ring-2 focus:ring-blue-400"
+              className="p-3 rounded-xl w-full bg-white/20 backdrop-blur-md focus:ring-2 focus:ring-blue-400"
             />
 
             <button
               type="submit"
-              className="mt-4 bg-blue-900 hover:bg-blue-800 text-white px-6 py-3 rounded-full flex items-center space-x-2 transition-all"
+              className="mt-4 bg-white/20 backdrop-blur-md hover:bg-emerald-400 text-white px-6 py-3 rounded-full flex items-center space-x-2 transition-all"
             >
               <Mail size={18} />
               <span>Submit</span>

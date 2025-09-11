@@ -1,5 +1,5 @@
 import React from "react";
-import bgImage from "../../assets/services_counsellors-bg.jpg"; // background image from assets
+import bgImage from "../../assets/services_counsellors-bg.jpg";
 
 export default function Counsellors() {
   const counsellors = [
@@ -26,7 +26,7 @@ export default function Counsellors() {
       style={{ backgroundImage: `url(${bgImage})` }}
     >
       {/* Overlay to make text readable */}
-      <div className="absolute inset-0 bg-black/50"></div>
+      <div className="absolute inset-0 bg-black/10"></div>
 
       <div className="relative z-10 max-w-5xl mx-auto">
         <h3 className="text-3xl font-bold text-center text-white mb-10">
